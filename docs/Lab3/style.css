@@ -46,3 +46,8 @@ article.SidebarText {
 h3 {
     text-align: center
 }
+
+ul,
+ol {
+    padding-left: 15%;
+}
