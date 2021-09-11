@@ -1,3 +1,25 @@
 body {
     background-color: #000000;
 }
+
+aside {
+    float: right;
+    width: 25%;
+    height: auto;
+    border: 2px solid white;
+    padding: 1%;
+    margin: auto 2%;
+    margin-bottom: 3%;
+}
+
+a:link {
+    color: #2E82B3;
+}
+
+a:visited {
+    color: #F08221;
+}
+
+a:active {
+    color: #C728F7;
+}
