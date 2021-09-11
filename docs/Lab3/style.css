@@ -56,3 +56,15 @@ ul,
 ol {
     padding-left: 15%;
 }
+
+ul.CircleType {
+    list-style-type: circle;
+}
+
+ul.DiscType {
+    list-style-type: disc;
+}
+
+ul.SquareType {
+    list-style-type: square;
+}
