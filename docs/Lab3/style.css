@@ -36,3 +36,13 @@ p.InterstingPages {
     font-family: "Lucida Console", sans-serif;
     text-align: center;
 }
+
+article.SidebarText {
+    font-family: Lucida Console;
+    font-size: 20px;
+    text-align: left;
+}
+
+h3 {
+    text-align: center
+}
