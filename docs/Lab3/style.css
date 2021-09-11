@@ -30,11 +30,16 @@ a:active {
     color: #C728F7;
 }
 
-p.InterstingPages {
+p.SidebarHeader {
     font-size: 5;
     color: orange;
     font-family: "Lucida Console", sans-serif;
     text-align: center;
+}
+
+p.RecipeDescription {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 article.SidebarText {
