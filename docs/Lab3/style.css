@@ -1,5 +1,11 @@
+header {
+    text-align: center
+}
+
 body {
     background-color: #000000;
+    font-size: 23px;
+    color: #ffffff;
 }
 
 aside {
@@ -22,4 +28,11 @@ a:visited {
 
 a:active {
     color: #C728F7;
+}
+
+p.InterstingPages {
+    font-size: 5;
+    color: orange;
+    font-family: "Lucida Console", sans-serif;
+    text-align: center;
 }
