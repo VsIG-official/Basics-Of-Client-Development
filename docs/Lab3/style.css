@@ -42,6 +42,15 @@ p.RecipeDescription {
     padding-right: 10%;
 }
 
+p#ParagraphWithScale {
+    text-align: center;
+    block-size: 250px;
+}
+
+img#ImageWithScale {
+    transform: scale(0.5) translate(0%, -50%);
+}
+
 article.SidebarText {
     font-family: Lucida Console;
     font-size: 20px;
@@ -67,4 +76,14 @@ ul.DiscType {
 
 ul.SquareType {
     list-style-type: square;
+}
+
+tr {
+    vertical-align: middle;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
