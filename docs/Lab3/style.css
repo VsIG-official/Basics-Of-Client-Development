@@ -82,8 +82,13 @@ tr {
     vertical-align: middle;
 }
 
+td {
+    border: 1px solid #56018F;
+}
+
 table {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    border: 5px solid #56018F;
 }
