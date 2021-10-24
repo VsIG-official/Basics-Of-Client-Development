@@ -19,6 +19,14 @@ h3 {
     text-align: center;
 }
 
+h3#Special {
+    font-size: 20px !important;
+    color: #C728F7;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
 aside {
     float: right;
     width: 25%;
@@ -59,11 +67,11 @@ ul,
 ol,
 dl {
     font-size: 20px;
-    color: #ffffff;
+    color: #fcc0c0;
     font-family: Georgia, serif;
     margin: auto;
     padding-left: 10%;
-    background-color: rgb(0, 0, 0);
+    background-color: black;
 }
 
 dl.SidebarText {
@@ -108,13 +116,15 @@ ol.DecimalType {
 
 table {
     font-size: x-large;
+    font-family: serif;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding: auto;
     border: 5px solid #56018F;
     vertical-align: middle;
-    color: rgb(255, 249, 240);
+    color: #FFF9F0;
+    background-color: black;
 }
 
 th {
