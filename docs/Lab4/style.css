@@ -144,7 +144,7 @@ a:active {
 
 /* Descendant combinator - tag2 is in tag1 at any level */
 
-p tt {
+article tt {
     color: green;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
