@@ -1,0 +1,180 @@
+header {
+    text-align: center
+}
+
+body {
+    font-size: 23px;
+    color: #ffffff;
+    font-style: normal;
+    line-height: 1.3;
+    text-align: left;
+    background-image: url("images/Background.jpg");
+}
+
+h3 {
+    font-size: 25px;
+    color: #f3a866;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
+aside {
+    float: right;
+    width: 25%;
+    height: auto;
+    border: 2px solid white;
+    padding: 1%;
+    margin: auto 2%;
+    margin-bottom: 3%;
+}
+
+p.RecipeDescription {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+p#ParagraphWithScale {
+    text-align: center;
+    block-size: 250px;
+}
+
+p#Frame {
+    text-align: right !important;
+    margin-top: -506.5px !important;
+}
+
+#ImageWithScale {
+    transform: scale(0.5) translate(0%, -50%) !important;
+}
+
+p.SidebarHeader {
+    font-size: 5;
+    color: orange;
+    font-family: "Lucida Console", sans-serif;
+    text-align: center;
+}
+
+ul,
+ol,
+dl {
+    font-size: 20px;
+    color: #ffffff;
+    font-family: Georgia, serif;
+    margin: auto;
+    padding-left: 10%;
+}
+
+ul,
+ol {
+    padding-left: 15%;
+}
+
+ul.CircleType {
+    list-style-type: circle;
+}
+
+ul.DiscType {
+    list-style-type: disc;
+}
+
+ul.SquareType {
+    list-style-type: square;
+}
+
+ol.UpperRomanType {
+    list-style-type: upper-roman;
+}
+
+ol.LowerRomanType {
+    list-style-type: lower-roman;
+}
+
+ol.AType {
+    list-style-type: upper-alpha;
+}
+
+ol.DecimalType {
+    list-style-type: decimal;
+}
+
+table {
+    font-size: x-large;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: auto;
+    border: 5px solid #56018F;
+    vertical-align: middle;
+    color: rgb(255, 249, 240);
+}
+
+th {
+    background-color: purple;
+}
+
+tr {
+    vertical-align: middle;
+    text-align: center;
+}
+
+td {
+    border: 1.5px solid #6701ac;
+}
+
+a {
+    font-size: 22px;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: center;
+}
+
+a:link {
+    color: #2E82B3;
+}
+
+a:visited {
+    color: #F08221;
+}
+
+a:active {
+    color: #C728F7;
+}
+
+
+/* Descendant combinator - tag2 is in tag1 at any level */
+
+article tt {
+    color: green;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p b {
+    color: yellow;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+i+strong {
+    color: #2E82B3;
+    font-size: x-large;
+    font-family: Lucida Console;
+}
+
+tt+em {
+    color: #af2eb3;
+    font-size: 24;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+
+/* Child combinator - tag2 is in tag1 at first level */
+
+dl>dd {
+    font-size: large;
+    font-family: sans-serif;
+    color: green;
+}
+
+a>i {
+    color: indianred;
+}
