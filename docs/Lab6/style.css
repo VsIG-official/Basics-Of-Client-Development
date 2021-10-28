@@ -126,24 +126,6 @@ a:active {
     color: #C728F7;
 }
 
-a:hover {
-    color: #00ff22;
-}
-
-
-/*  */
-
-span.Note {
-    font-size: 50%;
-    position: relative;
-    top: -10px;
-}
-
-span.NoteDescription {
-    font-size: 70%;
-    color: cadetblue;
-}
-
 div.RecipeDescription {
     padding-left: 10%;
     padding-right: 10%;
@@ -156,11 +138,6 @@ div.RecipeDescription>p:first-child:first-letter {
     margin: 4px;
 }
 
-h3:after,
-h3:before {
-    content: " | ";
-}
-
 div.Sidebar {
     float: right;
     width: 25%;
@@ -169,10 +146,4 @@ div.Sidebar {
     padding: 1%;
     margin: auto 2%;
     margin-bottom: 3%;
-}
-
-div#KnifeAndFork {
-    position: absolute;
-    left: 402px;
-    top: 374px
 }
