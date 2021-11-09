@@ -18,69 +18,10 @@
     </header>
 
     <div>
-        <div>
+        <div class="AdditionalPage">
             <button type="button" onclick="getContacts()">Get contacts</button>
-        </div>
-        <div class="Sidebar">
-            <p class="SidebarHeader">
-                Interesting pages to see:
-            </p>
-            <article>
-                <dl class="SidebarText">
-                    <dt>
-                        <a href="Belgian-Waffles.html">Belgian waffles</a>
-                    </dt>
-                    <dd>A variety of waffle with <br> a lighter batter, larger squares, <br> and deeper pockets</dd>
-                    <dd>
-                        <a href="Belgian-Waffles.html#Description">Description</a>
-                    </dd>
-                    <dd>
-                        <a href="Belgian-Waffles.html#Ingredients">Ingredients</a>
-                    </dd>
-                    <dd>
-                        <a href="Belgian-Waffles.html#Directions">Directions</a>
-                    </dd>
-                    <dd>
-                        <a href="Belgian-Waffles.html#Result">Result</a>
-                    </dd>
-                    <hr>
-
-                    <dt>
-                        <a href="Envelopes-With-Apples.html">Envelopes with apples</a>
-                    </dt>
-                    <dd>Layered envelopes with apples <br> filling, with a cinnamon flavor</dd>
-                    <dd>
-                        <a href="Envelopes-With-Apples.html#Description">Description</a>
-                    </dd>
-                    <dd>
-                        <a href="Envelopes-With-Apples.html#Ingredients">Ingredients</a>
-                    </dd>
-                    <dd>
-                        <a href="Envelopes-With-Apples.html#Directions">Directions</a>
-                    </dd>
-                    <dd>
-                        <a href="Envelopes-With-Apples.html#Result">Result</a>
-                    </dd>
-                    <hr>
-
-                    <dt>
-                        <a href="Cracked-Cookies.html">Cracked cookies</a>
-                    </dt>
-                    <dd>Chocolate cookies coated <br> in confectioners' sugar</dd>
-                    <dd>
-                        <a href="Cracked-Cookies.html#Description">Description</a>
-                    </dd>
-                    <dd>
-                        <a href="Cracked-Cookies.html#Ingredients">Ingredients</a>
-                    </dd>
-                    <dd>
-                        <a href="Cracked-Cookies.html#Directions">Directions</a>
-                    </dd>
-                    <dd>
-                        <a href="Cracked-Cookies.html#Result">Result</a>
-                    </dd>
-                </dl>
-            </article>
+            <br>
+            <button type="button" onclick="compareTwoTexts()">Compare length of two recipes names</button>
         </div>
     </div>
     <footer>
@@ -89,19 +30,43 @@
         <a href="../index.html">Back to all labs</a>
     </footer>
     <script>
-        function getContacts() {
-            let name = getName();
-            printDescription(name);
+        function compareTwoTexts() {
+            let texts;
+            texts = getTwoTexts();
+
+            if (isTextsChosen()) {
+                let textToShow = compareLengthes(texts[0], texts[1]);
+
+                showText(textToShow);
+                return;
+            }
+
+            return;
         }
 
-        function getName() {
-            let name = prompt("What's Your name?", "");
-            return name;
+        function getTwoTexts() {
+            let firstText = prompt("Write first recipes' name", "");
+            let secondText = prompt("And for the second one", "");
+            return [firstText, secondText];
         }
 
-        function printDescription(name) {
-            alert(`Hi, ${name}! This page is a description of how you can contact the creator of this site`);
-            confirm('Do You want to see contacts of the creator?')
+        function isTextsChosen() {
+            let isChosen = confirm("Are You sure, that You want to compare these strings?");
+            return isChosen;
+        }
+
+        function compareLengthes(firstText, secondtext) {
+            let text;
+            if (firstText.length > secondtext.length) {
+                text = firstText;
+            } else {
+                text = secondtext;
+            }
+            return text;
+        }
+
+        function showText(text) {
+            alert(text);
         }
     </script>
 </body>

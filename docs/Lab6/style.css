@@ -147,3 +147,15 @@ div.Sidebar {
     margin: auto 2%;
     margin-bottom: 3%;
 }
+
+div.AdditionalPage {
+    text-align: center;
+}
+
+div.AdditionalPage button {
+    font-family: Georgia, serif;
+    overflow: hidden;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: #000000;
+}
