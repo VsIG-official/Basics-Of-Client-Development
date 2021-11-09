@@ -19,11 +19,7 @@
 
     <div>
         <div>
-            <script>
-                let name = prompt("Your name?", "");
-                alert(`Hi, ${name}! This page is a description of how you can contact the creator of this site`);
-                confirm('Do You want to see contacts of the creator?')
-            </script>
+            <button type="button" onclick="getContacts()">Get contacts</button>
         </div>
         <div class="Sidebar">
             <p class="SidebarHeader">
@@ -92,6 +88,22 @@
         <br>
         <a href="../index.html">Back to all labs</a>
     </footer>
+    <script>
+        function getContacts() {
+            let name = getName();
+            printDescription(name);
+        }
+
+        function getName() {
+            let name = prompt("What's Your name?", "");
+            return name;
+        }
+
+        function printDescription(name) {
+            alert(`Hi, ${name}! This page is a description of how you can contact the creator of this site`);
+            confirm('Do You want to see contacts of the creator?')
+        }
+    </script>
 </body>
 
 </html>
