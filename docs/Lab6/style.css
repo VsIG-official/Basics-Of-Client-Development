@@ -154,8 +154,9 @@ div.AdditionalPage {
 
 div.AdditionalPage button {
     font-family: Georgia, serif;
+    background: transparent;
     overflow: hidden;
     font-weight: 800;
     font-size: 1.15rem;
-    color: #000000;
+    color: #f3a866;
 }
