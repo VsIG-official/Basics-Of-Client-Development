@@ -9,12 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Main page</title>
+    <title>Additional page</title>
 </head>
 
 <body>
     <header>
-        <h3>Additional functionality</h3>
+        <h3 id="AdditionalFunc">Additional functionality</h3>
         <p id="ThemeMode">Now You're in Dark mode</p>
     </header>
 
@@ -42,6 +42,10 @@
         <a href="../index.html">Back to all labs</a>
     </footer>
 
+    <script>
+        let pageName = document.getElementById("AdditionalFunc").firstChild;
+        setTimeout(() => alert(`Now You are on page with ${pageName.data}`), 1000);
+    </script>
     <script>
         function compareTwoTexts() {
             let texts;
