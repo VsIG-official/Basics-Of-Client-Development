@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <h3>Contact with developer</h3>
+        <h3>Additional functionality</h3>
     </header>
 
     <div>
@@ -38,6 +38,10 @@
             let texts;
             texts = getTwoTexts();
 
+            if (!texts[0] || !texts[1]) {
+                return;
+            }
+
             if (isTextsChosen()) {
                 let textToShow = compareLengthes(texts[0], texts[1]);
 
@@ -50,7 +54,15 @@
 
         function getTwoTexts() {
             let firstText = prompt("Write first recipes' name", "");
+            if (!firstText) {
+                return;
+            }
+
             let secondText = prompt("And for the second one", "");
+            if (!secondText) {
+                return;
+            }
+
             return [firstText, secondText];
         }
 
