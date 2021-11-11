@@ -5,7 +5,7 @@ const NEW_BACKGROUND = "images/BackgroundLight.jpg";
 const TIME = 30 * 1000;
 
 function changeBackground() {
-    document.body.style.backgroundImage = "url(images/BackgroundLight.jpg)";
+    document.body.style.backgroundImage = `url(${NEW_BACKGROUND})`;
 
-    setTimeout(() => document.body.style.backgroundImage = "url(images/Background.jpg)", TIME);
+    setTimeout(() => document.body.style.backgroundImage = `url(${DEFAULT_BACKGROUND})`, TIME);
 }
