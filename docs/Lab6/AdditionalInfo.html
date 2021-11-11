@@ -15,6 +15,7 @@
 <body>
     <header>
         <h3>Additional functionality</h3>
+        <p id="ThemeMode">Now You're in Dark mode</p>
     </header>
 
     <div>
@@ -25,7 +26,9 @@
             <br>
             <button type="button" onclick="compareTwoTexts()">Compare length of two recipes names</button>
             <br>
-            <button type="button" onclick="changeBackground()">Switch to light Background</button>
+            <button type="button" id="ThemeSwitcher" onclick="changeTheme()">Switch to Light mode</button>
+            <br>
+            <button type="button" onclick="writeElement()">Get random</button>
         </div>
     </div>
     <footer>

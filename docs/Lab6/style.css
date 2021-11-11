@@ -160,3 +160,9 @@ div.AdditionalPage button {
     font-size: 1.15rem;
     color: #f3a866;
 }
+
+p#ThemeMode {
+    position: absolute;
+    top: 10px;
+    left: 1000px;
+}
