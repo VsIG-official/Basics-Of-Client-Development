@@ -7,7 +7,7 @@ var links = {
     3: "Waffle-Tubes.html",
 }
 
-const RECIPE_SELECTOR = "div > p#RandomRecipe";
+const RECIPE_SELECTOR = "div > p.RandomRecipe";
 
 function insertRandomRecipes() {
     let paragraphs = getAllParagraphs();
