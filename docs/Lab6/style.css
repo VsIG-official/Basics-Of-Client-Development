@@ -148,11 +148,11 @@ div.Sidebar {
     margin-bottom: 3%;
 }
 
-div.AdditionalPage {
+div.AdditionalPageButtons {
     text-align: center;
 }
 
-div.AdditionalPage button {
+div.AdditionalPageButtons button {
     font-family: Georgia, serif;
     background: transparent;
     overflow: hidden;

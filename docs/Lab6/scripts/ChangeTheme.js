@@ -43,3 +43,5 @@ function changeThemeSwitcher() {
 function changeDefaultThemeAfterTime(themeModeText, themeSwitcher) {
     setTimeout(() => (document.body.style.backgroundImage = `url(${DEFAULT_BACKGROUND})`, themeModeText.textContent = DEFAULT_ELEMENT_TEXT, themeSwitcher.textContent = DEFAULT_BUTTON_TEXT), TIME);
 }
+
+function deleteThemeText() {}

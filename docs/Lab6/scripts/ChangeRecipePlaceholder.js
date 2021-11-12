@@ -12,6 +12,11 @@ function addRecipePlaceholder() {
 
 function getParagraph() {
     let paragraph = document.querySelector(RECIPE_SELECTOR);
+    if (!paragraph) {
+        let div = document.querySelector("div.AdditionalPage");
+        div.append(createNewParagraph());
+    }
+
     return paragraph;
 }
 
@@ -24,4 +29,9 @@ function createNewParagraph() {
 
 function addParagraph(paragraph, newParagraph) {
     paragraph.after(newParagraph);
+}
+
+function deleteRecipePlaceholder() {
+    let paragraph = getParagraph();
+    paragraph.remove();
 }
