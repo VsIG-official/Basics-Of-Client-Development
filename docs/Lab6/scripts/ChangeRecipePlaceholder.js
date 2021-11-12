@@ -2,6 +2,7 @@
 
 const PARAGRAPH_TAG = "p";
 const PARAGRAPH_CLASS = "RandomRecipe";
+const DIV_SELECTOR = "div.AdditionalPage";
 
 function addRecipePlaceholder() {
     let paragraph = getParagraph();
@@ -13,11 +14,21 @@ function addRecipePlaceholder() {
 function getParagraph() {
     let paragraph = document.querySelector(RECIPE_SELECTOR);
     if (!paragraph) {
-        let div = document.querySelector("div.AdditionalPage");
-        div.append(createNewParagraph());
+        let startDiv = findStartDiv();
+        addParagraphToDiv(startDiv);
     }
 
     return paragraph;
+}
+
+function findStartDiv() {
+    let div = document.querySelector(DIV_SELECTOR);
+    return div;
+}
+
+function addParagraphToDiv(div) {
+    let newParagraph = createNewParagraph();
+    div.append(newParagraph);
 }
 
 function createNewParagraph() {
