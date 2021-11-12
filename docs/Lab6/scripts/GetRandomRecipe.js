@@ -11,9 +11,11 @@ const RECIPE_SELECTOR = "div > p.RandomRecipe";
 
 function insertRandomRecipes() {
     let paragraphs = getAllParagraphs();
+    let paragraphsNum = 0;
 
     paragraphs.forEach(paragraph => {
-        changeHTML(paragraph);
+        paragraphsNum++;
+        changeHTML(paragraph, paragraphsNum);
     });
 }
 
@@ -28,7 +30,8 @@ function getRandomRecipe() {
     return randomRecipe;
 }
 
-function changeHTML(paragraph) {
+function changeHTML(paragraph, paragraphsNum) {
     let randomRecipe = getRandomRecipe();
-    paragraph.innerHTML = `<a href="${randomRecipe}" target="_blank">Random Recipe</a>`;
+    let number = document.createTextNode(paragraphsNum);
+    paragraph.innerHTML = `<a href="${randomRecipe}" target="_blank">Random Recipe №${number.textContent}</a>`;
 }
