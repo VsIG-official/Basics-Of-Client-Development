@@ -15,43 +15,36 @@
 <body>
     <header>
         <h3 id="AdditionalFunc">Additional functionality</h3>
-        <script>
-            document.write("<p id='ThemeMode'>Now You're in Dark mode</p>")
-        </script>
     </header>
 
     <div class="AdditionalPage">
         <div class="AdditionalPageButtons">
-            <button type="button" onclick="showInfo(SURNAME, NAME)">Get creators' info</button>
-            <br>
             <button type="button" onclick="startDialog()">Take a survey</button>
             <br>
             <button type="button" id="LengthComparer">Compare length of two recipes names</button>
             <br>
-            <button type="button" id="ThemeSwitcher" onclick="changeTheme()">Switch to Light mode</button>
+            <button type="button" onclick="showInfo(SURNAME, NAME)">Get creators' info</button>
             <br>
             <button type="button" onclick="insertRandomRecipes()">Get random recipes</button>
             <br>
-            <button type="button" onclick="addRecipePlaceholder()">Add more random recipes</button>
+            <button type="button" id="AddRecipeButton">Add more random recipes</button>
             <br>
-            <button type="button" onclick="deleteRecipePlaceholder()">Delete last recipe</button>
-            <br>
-            <button type="button" onclick="changeFooterToTable()">Change footer to table</button>
-            <br>
-            <button type="button" onclick="changeTableToFooter()">Change table to footer</button>
+            <button type="button " onclick="deleteRecipePlaceholder() ">Delete last recipe</button>
         </div>
-        <p class="RandomRecipe"></p>
-        <p class="RandomRecipe"></p>
-        <p class="RandomRecipe"></p>
+        <p class="RandomRecipe "></p>
+        <p class="RandomRecipe "></p>
+        <p class="RandomRecipe "></p>
     </div>
     <footer>
-        <a href="index.html" target="_blank">Main Page</a>
+        <a href="index.html " target="_blank ">Main Page</a>
         <br>
-        <a href="../index.html">Back to all labs</a>
+        <a href="../index.html ">Back to all labs</a>
     </footer>
 
     <script>
-        document.getElementById("LengthComparer").onclick = compareTwoTexts();
+        document.getElementById("LengthComparer").onclick = function() {
+            compareTwoTexts()
+        };
     </script>
     <script>
         function compareTwoTexts() {
@@ -73,7 +66,7 @@
         }
 
         function getTwoTexts() {
-            let firstText = prompt("Write first recipes' name", "");
+            let firstText = prompt("Write first recipes ' name", "");
             if (!firstText) {
                 return;
             }
@@ -105,9 +98,13 @@
             alert(text);
         }
     </script>
+    <script>
+        let recipeButton = document.getElementById("AddRecipeButton");
+        recipeButton.addEventListener("click", addRecipePlaceholder());
+        recipeButton.addEventListener("click", insertRandomRecipes());
+    </script>
     <script src="scripts/GetInfo.js"></script>
     <script src="scripts/Dialog.js"></script>
-    <script src="scripts/ChangeTheme.js"></script>
     <script src="scripts/GetRandomRecipe.js"></script>
     <script src="scripts/ChangeFooter.js"></script>
     <script src="scripts/ChangeRecipePlaceholder.js"></script>
