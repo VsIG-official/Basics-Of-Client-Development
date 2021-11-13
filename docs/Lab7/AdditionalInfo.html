@@ -26,7 +26,7 @@
             <br>
             <button type="button" onclick="startDialog()">Take a survey</button>
             <br>
-            <button type="button" onclick="compareTwoTexts()">Compare length of two recipes names</button>
+            <button type="button" id="LengthComparer">Compare length of two recipes names</button>
             <br>
             <button type="button" id="ThemeSwitcher" onclick="changeTheme()">Switch to Light mode</button>
             <br>
@@ -51,8 +51,7 @@
     </footer>
 
     <script>
-        let pageName = document.getElementById("AdditionalFunc").firstChild;
-        setTimeout(() => alert(`Now You are on page with ${pageName.data}`), 1000);
+        document.getElementById("LengthComparer").onclick = compareTwoTexts();
     </script>
     <script>
         function compareTwoTexts() {
