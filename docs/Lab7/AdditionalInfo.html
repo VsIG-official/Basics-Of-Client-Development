@@ -98,16 +98,16 @@
             alert(text);
         }
     </script>
-    <script>
-        let recipeButton = document.getElementById("AddRecipeButton");
-        recipeButton.addEventListener("click", addRecipePlaceholder());
-        recipeButton.addEventListener("click", insertRandomRecipes());
-    </script>
     <script src="scripts/GetInfo.js"></script>
     <script src="scripts/Dialog.js"></script>
     <script src="scripts/GetRandomRecipe.js"></script>
     <script src="scripts/ChangeFooter.js"></script>
     <script src="scripts/ChangeRecipePlaceholder.js"></script>
+    <script>
+        let recipeButton = document.getElementById("AddRecipeButton");
+        recipeButton.addEventListener("click", addRecipePlaceholder);
+        recipeButton.addEventListener("click", insertRandomRecipes);
+    </script>
 </body>
 
 </html>
