@@ -1,6 +1,6 @@
 'use strict'
 
-var links = {
+let links = {
     0: "Belgian-Waffles.html",
     1: "Cracked-Cookies.html",
     2: "Envelopes-With-Apples.html",

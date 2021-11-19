@@ -1,7 +1,7 @@
 'use strict'
 
 const FOOTER_SELECTOR = "footer";
-const FOOTER_STRING = '<footer><a href="index.html" target="_blank">Main Page</a><br><a href="../index.html">Back to all labs</a></footer>';
+const FOOTER_STRING = '<a href="index.html" target="_blank">Main Page</a><br><a href="../index.html">Back to all labs</a>';
 const TABLE_SELECTOR = "table";
 const TABLE_STRING = '<table><tr><td><a href="index.html" target="_blank">Main Page</a></td></tr><tr><td><a href="../index.html">Back to all labs</a></td></tr></table>';
 
