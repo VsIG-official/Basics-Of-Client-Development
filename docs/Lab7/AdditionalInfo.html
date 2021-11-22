@@ -30,6 +30,8 @@
             <button type="button" id="DeleteRecipeButton">Delete last recipe</button>
             <br>
             <button type="button" onclick="showInfo(SURNAME, NAME)">Get creators' info</button>
+            <button type="button" id="ChangeFooter">Change footer to table</button>
+            <br>
         </div>
         <p class="RandomRecipe "></p>
         <p class="RandomRecipe "></p>
@@ -102,17 +104,22 @@
     <script src="scripts/Dialog.js"></script>
     <script src="scripts/GetRandomRecipe.js"></script>
     <script src="scripts/ChangeRecipePlaceholder.js"></script>
+    <script src="scripts/ChangeFooter.js"></script>
     <script>
         let recipeButton = document.getElementById("AddRecipeButton");
         recipeButton.addEventListener("click", addRecipePlaceholder);
         recipeButton.addEventListener("click", insertRandomRecipes);
+
+        let deleteRecipeButton = document.getElementById("DeleteRecipeButton");
+        deleteRecipeButton.addEventListener("click", deleteRecipePlaceholder);
     </script>
     <script>
-        let deleteRecipeButton = document.getElementById("DeleteRecipeButton");
-        DeleteRecipeButton.addEventListener('click', {
+        let changeFooterButton = document.getElementById("ChangeFooter");
+        changeFooterButton.addEventListener('click', {
             handleEvent(event) {
+                changeFooterToTable();
+                changeFooterButton.removeEventListener('click', changeFooterToTable)
                 alert(event.type + " на " + event.currentTarget.nodeName);
-                deleteRecipePlaceholder();
             }
         });
     </script>
