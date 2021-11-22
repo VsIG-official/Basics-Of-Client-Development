@@ -166,3 +166,9 @@ p#ThemeMode {
     top: 10px;
     left: 1000px;
 }
+
+.highlight {
+    background-image: linear-gradient(to right, #493240, #cf037e, #493240);
+    border-radius: 6px;
+    padding: 3px 6px;
+}

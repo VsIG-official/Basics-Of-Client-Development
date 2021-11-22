@@ -30,99 +30,136 @@
             <button type="button" id="DeleteRecipeButton">Delete last recipe</button>
             <br>
             <button type="button" onclick="showInfo(SURNAME, NAME)">Get creators' info</button>
-            <button type="button" id="ChangeFooter">Change footer to table</button>
             <br>
+            <button type="button" id="ChangeFooter">Change footer to table</button>
         </div>
+
+        <h3>Current Recipes avaible:</h3>
+        <ul id="HighlightList">
+            <li>Belgian Waffles</li>
+            <li>Cracked Cookies</li>
+            <li>Envelopes with Apples</li>
+            <li>Waffle Tubes</li>
+        </ul>
+
         <p class="RandomRecipe "></p>
         <p class="RandomRecipe "></p>
         <p class="RandomRecipe "></p>
     </div>
     <footer>
-        <a href="index.html " target="_blank ">Main Page</a>
+        <a href="index.html" target="_blank">Main Page</a>
         <br>
-        <a href="../index.html ">Back to all labs</a>
+        <a href="../index.html">Back to all labs</a>
     </footer>
 
-    <script>
-        document.getElementById("LengthComparer").onclick = function() {
-            compareTwoTexts()
-        };
-    </script>
-    <script>
-        function compareTwoTexts() {
-            let texts;
-            texts = getTwoTexts();
+    <div>
+        <script src="scripts/GetInfo.js"></script>
+        <script src="scripts/Dialog.js"></script>
+        <script src="scripts/GetRandomRecipe.js"></script>
+        <script src="scripts/ChangeRecipePlaceholder.js"></script>
+        <script src="scripts/ChangeFooter.js"></script>
+        <script>
+            document.getElementById("LengthComparer").onclick = function() {
+                compareTwoTexts()
+            };
+        </script>
+        <script>
+            function compareTwoTexts() {
+                let texts;
+                texts = getTwoTexts();
 
-            if (!texts[0] || !texts[1]) {
+                if (!texts[0] || !texts[1]) {
+                    return;
+                }
+
+                if (isTextsChosen()) {
+                    let textToShow = compareLengthes(texts[0], texts[1]);
+
+                    showText(textToShow);
+                    return;
+                }
+
                 return;
             }
 
-            if (isTextsChosen()) {
-                let textToShow = compareLengthes(texts[0], texts[1]);
+            function getTwoTexts() {
+                let firstText = prompt("Write first recipes ' name", "");
+                if (!firstText) {
+                    return;
+                }
 
-                showText(textToShow);
-                return;
+                let secondText = prompt("And for the second one", "");
+                if (!secondText) {
+                    return;
+                }
+
+                return [firstText, secondText];
             }
 
-            return;
-        }
-
-        function getTwoTexts() {
-            let firstText = prompt("Write first recipes ' name", "");
-            if (!firstText) {
-                return;
+            function isTextsChosen() {
+                let isChosen = confirm("Are You sure, that You want to compare these strings?");
+                return isChosen;
             }
 
-            let secondText = prompt("And for the second one", "");
-            if (!secondText) {
-                return;
+            function compareLengthes(firstText, secondtext) {
+                let text;
+                if (firstText.length > secondtext.length) {
+                    text = firstText;
+                } else {
+                    text = secondtext;
+                }
+                return text;
             }
 
-            return [firstText, secondText];
-        }
-
-        function isTextsChosen() {
-            let isChosen = confirm("Are You sure, that You want to compare these strings?");
-            return isChosen;
-        }
-
-        function compareLengthes(firstText, secondtext) {
-            let text;
-            if (firstText.length > secondtext.length) {
-                text = firstText;
-            } else {
-                text = secondtext;
+            function showText(text) {
+                alert(text);
             }
-            return text;
-        }
+        </script>
+        <script>
+            let recipeButton = document.getElementById("AddRecipeButton");
+            recipeButton.addEventListener("click", addRecipePlaceholder);
+            recipeButton.addEventListener("click", insertRandomRecipes);
 
-        function showText(text) {
-            alert(text);
-        }
-    </script>
-    <script src="scripts/GetInfo.js"></script>
-    <script src="scripts/Dialog.js"></script>
-    <script src="scripts/GetRandomRecipe.js"></script>
-    <script src="scripts/ChangeRecipePlaceholder.js"></script>
-    <script src="scripts/ChangeFooter.js"></script>
-    <script>
-        let recipeButton = document.getElementById("AddRecipeButton");
-        recipeButton.addEventListener("click", addRecipePlaceholder);
-        recipeButton.addEventListener("click", insertRandomRecipes);
+            let deleteRecipeButton = document.getElementById("DeleteRecipeButton");
+            deleteRecipeButton.addEventListener("click", deleteRecipePlaceholder);
+        </script>
+        <script>
+            let changeFooterButton = document.getElementById("ChangeFooter");
+            changeFooterButton.addEventListener('click', {
+                handleEvent(event) {
+                    changeFooterToTable();
+                    changeFooterButton.removeEventListener('click', changeFooterToTable)
+                    alert(event.type + " на " + event.currentTarget.nodeName);
+                }
+            });
+        </script>
+        <script>
+            let selectedLi;
 
-        let deleteRecipeButton = document.getElementById("DeleteRecipeButton");
-        deleteRecipeButton.addEventListener("click", deleteRecipePlaceholder);
-    </script>
-    <script>
-        let changeFooterButton = document.getElementById("ChangeFooter");
-        changeFooterButton.addEventListener('click', {
-            handleEvent(event) {
-                changeFooterToTable();
-                changeFooterButton.removeEventListener('click', changeFooterToTable)
-                alert(event.type + " на " + event.currentTarget.nodeName);
+            let list = document.getElementById("HighlightList");
+            list.onclick = function(event) {
+                let li = event.target.closest('li');
+
+                if (!li) {
+                    return;
+                }
+                if (!list.contains(li)) {
+                    return;
+                }
+
+                highlight(li);
+            };
+
+            function highlight(li) {
+                if (selectedLi) {
+                    selectedLi.classList.remove('highlight');
+                }
+
+                selectedLi = li;
+                selectedLi.classList.add('highlight');
             }
-        });
-    </script>
+        </script>
+    </div>
 </body>
 
 </html>
