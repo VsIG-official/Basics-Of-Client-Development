@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="author" content="Valentyn Dominskyi">
+    <meta name="keywords" content="recipes, cookbook">
+    <meta name="description" content="cookbook site with recipes">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Additional page</title>
+</head>
+
+<body>
+    <header>
+        <h3 id="AdditionalFunc">Additional functionality</h3>
+    </header>
+
+    <div class="AdditionalPage">
+        <div class="AdditionalPageButtons">
+            <button type="button" onclick="startDialog()">Take a survey</button>
+            <br>
+            <button type="button" id="LengthComparer">Compare length of two recipes names</button>
+            <br>
+            <button type="button" onclick="insertRandomRecipes()">Get random recipes</button>
+            <br>
+            <button type="button" id="AddRecipeButton">Add more random recipes</button>
+            <br>
+            <button type="button" id="DeleteRecipeButton">Delete last recipe</button>
+            <br>
+            <button type="button" id="ChangeFooter">Change footer to table</button>
+            <br>
+            <div id="Menu">
+                <button data-action="getInfo">Get creators' info</button>
+                <button data-action="getGithub">Go To Github Profile</button>
+            </div>
+            <button data-toggle-id="offerRecipe">Offer a recipe</button>
+            <form id="offerRecipe" hidden>
+                Recipe, which You want to see: <input type="text">
+            </form>
+        </div>
+
+        <h3>Current Recipes avaible:</h3>
+        <ul id="HighlightList">
+            <li>Belgian Waffles</li>
+            <li>Cracked Cookies</li>
+            <li>Envelopes with Apples</li>
+            <li>Waffle Tubes</li>
+        </ul>
+
+        <p class="RandomRecipe "></p>
+        <p class="RandomRecipe "></p>
+        <p class="RandomRecipe "></p>
+    </div>
+    <footer>
+        <a href="index.html" target="_blank">Main Page</a>
+        <br>
+        <a href="../index.html">Back to all labs</a>
+    </footer>
+
+    <div>
+        <script src="scripts/GetInfo.js"></script>
+        <script src="scripts/Dialog.js"></script>
+        <script src="scripts/GetRandomRecipe.js"></script>
+        <script src="scripts/ChangeRecipePlaceholder.js"></script>
+        <script src="scripts/ChangeFooter.js"></script>
+        <script src="scripts/LengthComparer.js"></script>
+        <script src="scripts/ListHighlight.js"></script>
+        <script src="scripts/Delegater.js"></script>
+        <script src="scripts/Behaviour.js"></script>
+        <script>
+            let recipeButton = document.getElementById("AddRecipeButton");
+            recipeButton.addEventListener("click", addRecipePlaceholder);
+            recipeButton.addEventListener("click", insertRandomRecipes);
+
+            let deleteRecipeButton = document.getElementById("DeleteRecipeButton");
+            deleteRecipeButton.addEventListener("click", deleteRecipePlaceholder);
+
+            highlightListElement();
+        </script>
+    </div>
+</body>
+
+</html>
