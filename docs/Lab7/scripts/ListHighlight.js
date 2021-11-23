@@ -2,21 +2,25 @@
 
 let selectedLi;
 
-let list = document.getElementById("HighlightList");
-list.onclick = function(event) {
-    let li = event.target.closest('li');
+function highlightListElement() {
+    let list = document.getElementById("HighlightList");
 
-    if (!li) {
-        return;
-    }
-    if (!list.contains(li)) {
-        return;
-    }
+    list.onclick = function(event) {
+        let li = event.target.closest('li');
 
-    highlight(li);
-};
+        if (!li) {
+            return;
+        }
 
-function highlight(li) {
+        if (!list.contains(li)) {
+            return;
+        }
+
+        highlightElement(li);
+    };
+}
+
+function highlightElement(li) {
     if (selectedLi) {
         selectedLi.classList.remove('highlight');
     }

@@ -10,7 +10,7 @@ changeFooterButton.addEventListener('click', {
     handleEvent(event) {
         changeFooterToTable();
         changeFooterButton.removeEventListener('click', changeFooterToTable)
-        alert(event.type + " на " + event.currentTarget.nodeName);
+        alert("You " + event.type + "ed on " + event.currentTarget.nodeName);
     }
 });
 
