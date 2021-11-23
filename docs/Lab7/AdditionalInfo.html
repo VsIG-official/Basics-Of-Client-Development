@@ -31,15 +31,14 @@
             <br>
             <button type="button" id="ChangeFooter">Change footer to table</button>
             <br>
-            <button data-toggle-id="offerRecipe">Offer a recipe</button>
-            <form id="offerRecipe" hidden>
-                Recipe, which You want to see: <input type="text">
-            </form>
-            <br>
             <div id="Menu">
                 <button data-action="getInfo">Get creators' info</button>
                 <button data-action="getGithub">Go To Github Profile</button>
             </div>
+            <button data-toggle-id="offerRecipe">Offer a recipe</button>
+            <form id="offerRecipe" hidden>
+                Recipe, which You want to see: <input type="text">
+            </form>
         </div>
 
         <h3>Current Recipes avaible:</h3>
@@ -66,63 +65,10 @@
         <script src="scripts/GetRandomRecipe.js"></script>
         <script src="scripts/ChangeRecipePlaceholder.js"></script>
         <script src="scripts/ChangeFooter.js"></script>
-        <script>
-            document.getElementById("LengthComparer").onclick = function() {
-                compareTwoTexts()
-            };
-        </script>
-        <script>
-            function compareTwoTexts() {
-                let texts;
-                texts = getTwoTexts();
-
-                if (!texts[0] || !texts[1]) {
-                    return;
-                }
-
-                if (isTextsChosen()) {
-                    let textToShow = compareLengthes(texts[0], texts[1]);
-
-                    showText(textToShow);
-                    return;
-                }
-
-                return;
-            }
-
-            function getTwoTexts() {
-                let firstText = prompt("Write first recipes ' name", "");
-                if (!firstText) {
-                    return;
-                }
-
-                let secondText = prompt("And for the second one", "");
-                if (!secondText) {
-                    return;
-                }
-
-                return [firstText, secondText];
-            }
-
-            function isTextsChosen() {
-                let isChosen = confirm("Are You sure, that You want to compare these strings?");
-                return isChosen;
-            }
-
-            function compareLengthes(firstText, secondtext) {
-                let text;
-                if (firstText.length > secondtext.length) {
-                    text = firstText;
-                } else {
-                    text = secondtext;
-                }
-                return text;
-            }
-
-            function showText(text) {
-                alert(text);
-            }
-        </script>
+        <script src="scripts/LengthComparer.js"></script>
+        <script src="scripts/ListHighlight.js"></script>
+        <script src="scripts/Delegater.js"></script>
+        <script src="scripts/Behaviour.js"></script>
         <script>
             let recipeButton = document.getElementById("AddRecipeButton");
             recipeButton.addEventListener("click", addRecipePlaceholder);
@@ -130,74 +76,6 @@
 
             let deleteRecipeButton = document.getElementById("DeleteRecipeButton");
             deleteRecipeButton.addEventListener("click", deleteRecipePlaceholder);
-        </script>
-        <script>
-            let changeFooterButton = document.getElementById("ChangeFooter");
-            changeFooterButton.addEventListener('click', {
-                handleEvent(event) {
-                    changeFooterToTable();
-                    changeFooterButton.removeEventListener('click', changeFooterToTable)
-                    alert(event.type + " на " + event.currentTarget.nodeName);
-                }
-            });
-        </script>
-        <script>
-            let selectedLi;
-
-            let list = document.getElementById("HighlightList");
-            list.onclick = function(event) {
-                let li = event.target.closest('li');
-
-                if (!li) {
-                    return;
-                }
-                if (!list.contains(li)) {
-                    return;
-                }
-
-                highlight(li);
-            };
-
-            function highlight(li) {
-                if (selectedLi) {
-                    selectedLi.classList.remove('highlight');
-                }
-
-                selectedLi = li;
-                selectedLi.classList.add('highlight');
-            }
-        </script>
-        <script>
-            class Menu {
-                constructor(btn) {
-                    this._btn = btn;
-                    btn.onclick = this.onClick.bind(this);
-                }
-                getInfo() {
-                    showInfo(SURNAME, NAME);
-                }
-                getGithub() {
-                    goToGithub();
-                }
-                onClick(event) {
-                    let action = event.target.dataset.action;
-                    if (action) {
-                        this[action]();
-                    }
-                };
-            }
-
-            let menu = document.getElementById("Menu");
-
-            new Menu(menu);
-        </script>
-        <script>
-            document.addEventListener('click', function(event) {
-                let id = event.target.dataset.toggleId;
-                if (!id) return;
-                let textArea = document.getElementById(id);
-                textArea.hidden = !textArea.hidden;
-            });
         </script>
     </div>
 </body>
