@@ -29,9 +29,17 @@
             <br>
             <button type="button" id="DeleteRecipeButton">Delete last recipe</button>
             <br>
-            <button type="button" onclick="showInfo(SURNAME, NAME)">Get creators' info</button>
-            <br>
             <button type="button" id="ChangeFooter">Change footer to table</button>
+            <br>
+            <button data-toggle-id="offerRecipe">Offer a recipe</button>
+            <form id="offerRecipe" hidden>
+                Recipe, which You want to see: <input type="text">
+            </form>
+            <br>
+            <div id="Menu">
+                <button data-action="getInfo">Get creators' info</button>
+                <button data-action="getGithub">Go To Github Profile</button>
+            </div>
         </div>
 
         <h3>Current Recipes avaible:</h3>
@@ -158,6 +166,38 @@
                 selectedLi = li;
                 selectedLi.classList.add('highlight');
             }
+        </script>
+        <script>
+            class Menu {
+                constructor(btn) {
+                    this._btn = btn;
+                    btn.onclick = this.onClick.bind(this);
+                }
+                getInfo() {
+                    showInfo(SURNAME, NAME);
+                }
+                getGithub() {
+                    goToGithub();
+                }
+                onClick(event) {
+                    let action = event.target.dataset.action;
+                    if (action) {
+                        this[action]();
+                    }
+                };
+            }
+
+            let menu = document.getElementById("Menu");
+
+            new Menu(menu);
+        </script>
+        <script>
+            document.addEventListener('click', function(event) {
+                let id = event.target.dataset.toggleId;
+                if (!id) return;
+                let textArea = document.getElementById(id);
+                textArea.hidden = !textArea.hidden;
+            });
         </script>
     </div>
 </body>

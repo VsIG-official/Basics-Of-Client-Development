@@ -8,8 +8,6 @@ const GITHUB_ACCOUNT = "https://github.com/VsIG-official";
 
 function showInfo(surname, name, position = DEFAULT_POSITION) {
     alert(`Surname - ${surname}, name - ${name} and position - ${position}`);
-
-    goToGithub();
 }
 
 function goToGithub() {
