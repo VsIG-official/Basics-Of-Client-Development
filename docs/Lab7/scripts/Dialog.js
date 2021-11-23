@@ -1,6 +1,6 @@
 'use strict'
 
-var questions = {
+let questions = {
     0: "How old are You?",
     1: "Why do You attend Our site?",
     2: "What do You like the most about this site?",
