@@ -2,7 +2,7 @@
 
 class Menu {
     constructor(btn) {
-        this._btn = btn;
+        this.btn = btn;
         btn.onclick = this.onClick.bind(this);
     }
     getInfo() {
