@@ -172,3 +172,12 @@ p#ThemeMode {
     border-radius: 6px;
     padding: 3px 6px;
 }
+
+.highlightImage {
+    border: #ffffff;
+    border-radius: 6px;
+}
+
+.RecipeImages {
+    text-align: center;
+}
