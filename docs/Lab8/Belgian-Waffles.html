@@ -88,40 +88,50 @@
                 <li>Whisk</li>
                 <li>Pour everything into the waffle iron</li>
             </ul>
-
-            <a name="Result"></a>
-            <h3>Result:</h3>
-            <!-- scale and translate, as for Me, looks bad in this situation, 'cause text underneath will be placed too down without slicing the block size-->
-            <a href="images/Belgian_Waffles.jpg" target="_blank">
-                <p id="ParagraphWithScale">
-                    <img id="ImageWithScale" src="images/Belgian_Waffles.jpg " alt="Belgian Waffles ">
-                </p>
-            </a>
-
-            <a name="Mini-Game"></a>
+            <div>
+                <a name="Result"></a>
+                <h3>Result:</h3>
+                <a href="images/Belgian_Waffles.jpg" target="_blank">
+                    <p>
+                        <img src="images/Belgian_Waffles.jpg " alt=" Belgian Waffles" id="WaffleImage" height="350px " width="350px">
+                    </p>
+                </a>
+            </div>
+            <a name="Mini-Game "></a>
             <h3>Mini-Game:</h3>
-            <div class="RecipeImages">
-                <img src="images/Eggs.png" style="height: 80px;" id="Eggs" alt="Eggs">
-                <img src="images/Butter.png" style="height: 80px;" id="Butter" alt="Butter">
-                <img src="images/Sugar.png" style="height: 80px;" id="Sugar" alt="Sugar">
-                <img src="images/Flour.png" style="height: 80px;" id="Flour" alt="Flour">
-                <img src="images/Milk.png" style="height: 80px;" id="Milk" alt="Milk">
-                <img src="images/Baking-Powder.png" style="height: 80px;" id="Baking-Powder" alt="Baking-Powder">
-                <img src="images/Vanillin.png" style="height: 80px;" id="Vanillin" alt="Vanillin">
-                <img src="images/Transparent.png" style="height: 80px; opacity: 0;">
+            <div class="RecipeImages ">
+                <img src="images/Eggs.png " style="height: 80px; " id="Eggs" alt="Eggs ">
+                <img src="images/Butter.png " style="height: 80px; " id="Butter" alt="Butter ">
+                <img src="images/Sugar.png " style="height: 80px; " id="Sugar" alt="Sugar ">
+                <img src="images/Flour.png " style="height: 80px; " id="Flour" alt="Flour ">
+                <img src="images/Milk.png " style="height: 80px; " id="Milk" alt="Milk ">
+                <img src="images/Baking-Powder.png " style="height: 80px; " id="Baking-Powder" alt="Baking-Powder ">
+                <img src="images/Vanillin.png " style="height: 80px; " id="Vanillin" alt="Vanillin ">
+                <img src="images/Transparent.png " style="height: 80px; opacity: 0; ">
                 <br>
                 <br>
                 <br>
-                <img src="images/Bowl.png" style="height: 260px;" id="Bowl" alt="Bowl">
+                <img src="images/Bowl.png " style="height: 260px; " id="Bowl" alt="Bowl ">
             </div>
         </article>
     </div>
     <footer>
-        <a href="../index.html">Back to all labs</a>
+        <a href="../index.html ">Back to all labs</a>
     </footer>
-    <script src="scripts/DragAndDrop.js"></script>
+    <script src="scripts/DragAndDrop.js "></script>
+    <script src="scripts/ChangeImage.js "></script>
     <script>
         activateDrag();
+
+        let waffleImage = document.getElementById("WaffleImage");
+        waffleImage.addEventListener("mouseover", function(event) {
+            enlargeImage(event.target);
+            event.relatedTarget.style.background = "#27142F";
+        })
+        waffleImage.addEventListener("mouseout", function(event) {
+            unlargeImage(event.target);
+            event.relatedTarget.style.background = "transparent";
+        })
     </script>
 </body>
 
