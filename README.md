@@ -1,4 +1,4 @@
-# Project Title
+# Basics Of Client Development
 
 <p align="center">
   <img src="/docs/images/FrontendHeader.png" data-canonical-src="/docs/images/FrontendHeader.png"/>
@@ -14,7 +14,6 @@
 ### Description
 
 This is My repo with labs for Basics Of Client Development
-
 
 ## Badges
 
